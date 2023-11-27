@@ -9,7 +9,7 @@ export class LabseqService {
   private readonly baseUrl: string;
 
   constructor(private http: HttpClient) {
-    this.baseUrl = 'http://localhost:8080/labseq';
+    this.baseUrl = 'http://localhost:8080/v1/labseq';
   }
 
   calcule(n: number): Observable<number> {

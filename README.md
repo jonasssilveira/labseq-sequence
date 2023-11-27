@@ -7,7 +7,7 @@ Web application for retrieving values from the labseq sequence.
 Clone the repository:
 
 ```console
-$ git clone https://github.com/leonardoflorido/labseq-sequence.git
+$ git clone https://github.com/jonasssilveira/labseq-sequence.git
 ```
 
 ## How To Run (Docker)
@@ -48,12 +48,11 @@ Run the following commands in two separate terminals:
 ```console
 $ yarn install 
 ```
-2. Inside the `frontend` folder, run:
+2. Inside the `frontend/labseq-sequence` folder, run:
 
 ```console
 $ ng serve --open
-```
-
+``` 
 
 ## Creating a native executable
 
@@ -68,4 +67,14 @@ $ ./mvnw package -Dnative
 docker-compose up 
 ```
 
- 
+## Bookmarks
+
+- Link to the [Web Application](http://localhost:4200/)
+- Link to the [API Documentation](http://localhost:8080/swagger-ui.html#/)
+
+Note:
+
+- To view the API documentation, the backend must be running.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
