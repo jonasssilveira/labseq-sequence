@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="center">
+    <h2>LabSeq</h2>
+
+    <div class="input-group">
+      <label for="n">Enter a number:</label>
+      <input [(ngModel)]="n" id="n" type="number">
+    </div>
+
+    <button (click)="onSubmit()" class="submit-btn">Submit</button>
+
+    <div *ngIf="result !== undefined" class="result-container">
+      <p class="result-text">Result: {{ result }}</p>
+    </div>
+
+    <div *ngIf="failed" class="error-container">
+      <p class="error-text">Error: The number must be a positive integer.</p>
+    </div>
+  </div>
+</div>
