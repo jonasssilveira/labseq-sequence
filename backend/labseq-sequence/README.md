@@ -2,28 +2,6 @@
 
 Web application for retrieving values from the labseq sequence.
 
-## Running the application in dev mode
-
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
-```
-
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
-
-## Packaging and running the application
-
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
-
-# Labseq Sequence
-
-Web application for retrieving values from the labseq sequence.
-
 ## Installation
 
 Clone the repository:
@@ -46,33 +24,48 @@ Note:
 - If [Docker](https://www.docker.com/) is not installed, please install it or follow the steps below.
 
 ## Prerequisites
-
-To run the project, the following software must be installed on the system:
-
+- [Docker](https://www.docker.com/) 
 - [Node.js](https://nodejs.org/en/) (v14 or higher)
 - [Java](https://www.oracle.com/java/) (v17) or [GraalVM](https://www.graalvm.org/downloads/) (21) 
 - [Maven](https://maven.apache.org/) (v3.8.6 or higher)
-- 
+- [Yarn](https://yarnpkg.com/) (v1.22.11 or higher)
+
+## Requirements
+
+Install requirements:
+
+- Inside the `frontend` folder, run:
+
+ ```console
+ $ yarn install
+ ```
+## How To Run
+
+Run the following commands in two separate terminals:
+
+1. Inside the `frontend` folder, run:
+
+```console
+$ yarn install 
+```
+2. Inside the `frontend` folder, run:
+
+```console
+$ ng serve --open
+```
+
+
 ## Creating a native executable
 
-You can create a native executable using: 
+1. Inside the `backend` folder, run:
+
+```console
+$ ./mvnw package -Dnative
+``` 
+
+2. To run the image execute: 
 ```shell script
-./mvnw package -Dnative
+docker-compose up 
 ```
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/labseq-sequence-1.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
-
-## Provided Code
-
-### RESTEasy Reactive
-
-Easily start your Reactive RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+ 
